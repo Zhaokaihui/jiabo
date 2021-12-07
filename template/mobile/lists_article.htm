@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="mobile">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_m' /}/skin/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_m' /}/skin/css/style.css">
+<script type="text/javascript" src="{eyou:global name='web_templets_m' /}/skin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_m' /}/skin/js/style.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_m' /}/skin/js/moment.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_m' /}/skin/js/jquery.limarquee.js"></script>
+</head>
+<body>
+<div class="mask"></div>
+{eyou:include file="header.htm" /}<div class="main">
+  <div class="page_banner" style="background: url({eyou:ad aid='7'}{$field.litpic}{/eyou:ad}) no-repeat top; background-size: cover;"></div>
+  <div class="itit">
+    <h3>{$eyou.field.typeid|gettoptype=###,'englist_name'}</h3>
+    <h4>{$eyou.field.typeid|gettoptype=###,'typename'}</h4>
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </div>
+  <div class="page_content">
+    <ul class="news_ul clearfix clear">
+    </ul>
+    <div>
+      <ul class="newslist_ul clearfix clear">
+      {eyou:list pagesize='6'}
+        <li> <a href="{$field.arcurl}">{$field.title}</a>
+          <p class="p1">{$field.add_time|MyDate='Y-m-d',###}</p>
+          <p class="p2">{$field.seo_description|html_msubstr=###,0,50,true}</p>
+        </li>
+      {/eyou:list}   
+      </ul>
+    </div>
+    <div class="page">
+        <div class="pagination">
+        {eyou:pagelist listitem='index,pre,next,end' listsize='2' /}
+        </div>
+      </div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+</body>
+</html>

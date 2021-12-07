@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/imgauto.js"></script>
+</head>
+<body>
+{eyou:include file="header.htm" /}
+<div class="page_banner" style="background: url({eyou:ad aid='7'}{$field.litpic}{/eyou:ad}) no-repeat center center;"></div>
+<div class="main">
+  <div class="w1200">
+    {eyou:include file="left.htm" /}
+    <div class="main_right fr">
+      <div class="crumbs">{eyou:position style="crumb" /}</div>
+      <div class="show_product">
+        <h3>{$eyou.field.title} </h3>
+        <p class="tips">发布时间:{$eyou.field.add_time|MyDate='Y-m-d',###}</p>
+        
+        <div class="pro_img"><img src="{$eyou.field.litpic} " alt="{$eyou.field.title}"></div>
+        <div class="show_c_content">
+          <p>{$eyou.field.content} </p>
+        </div>
+        {eyou:prenext get='pre' empty='<p class="show_c_content">上一篇&nbsp;:&nbsp;&nbsp;<a>暂无</a></p>'}
+        <p class="show_c_content">上一篇&nbsp;:&nbsp;&nbsp;<a href="{$field.arcurl}">{$field.title} </a></p>
+        {/eyou:prenext}
+        {eyou:prenext get='next' empty='<p class="show_c_content">下一篇&nbsp;:&nbsp;&nbsp;<a>暂无</a></p>'}
+        <p class="show_c_content">下一篇&nbsp;:&nbsp;&nbsp;<a href="{$field.arcurl}">{$field.title} </a></p>
+        {/eyou:prenext}
+      </div>
+      <div class="flink mt20 clearfix">
+        <div class="flink_tit">
+          <h3>PROS&nbsp;&nbsp;<span>推荐产品</span></h3>
+        </div>
+        <div class="pros_list">
+          <ul class="clearfix">
+          {eyou:arclist flag='c' orderby='now' row='4' typeid='2'}
+            <li> <a href="{$field.arcurl}" class="img"><img src="{$field.litpic}" alt="{$field.title}"></a> <a href="{$field.arcurl}" class="t">{$field.title}</a> </li>
+          {/eyou:arclist} 
+          </ul>
+        </div>
+      </div>
+      <script>
+                    $('.pros_list ul li .img img').imgAuto();
+                </script>
+      <div class="flink mt20 clearfix">
+        <div class="flink_tit">
+          <h3>NEWS&nbsp;&nbsp;<span>推荐新闻</span></h3>
+        </div>
+        <div class="news_list">
+          <ul class="clearfix">
+           {eyou:arclist flag='c' orderby='now' row='5' typeid='3'}
+            <li>
+              <p class="fr">{$field.add_time|MyDate='Y-m-d',###}</p>
+              <a href="{$field.arcurl}">{$field.title}</a> </li>
+           {/eyou:arclist}     
+          </ul>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+<style type="text/css">
+    .pagination p {
+        line-height: 20px;
+    }
+    .pagination a {
+        line-height: 20px;
+    }
+</style>
+</body>
+</html>

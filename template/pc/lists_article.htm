@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/style.css" rel="stylesheet" />
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+{eyou:include file="header.htm" /}
+<div class="page_banner" style="background: url({eyou:ad aid='7'}{$field.litpic}{/eyou:ad}) no-repeat center center;"></div>
+<div class="main">
+  <div class="w1200">
+    {eyou:include file="left.htm" /}
+    
+    <div class="main_right fr">
+      <div class="crumbs"> {eyou:position style="crumb" /} </div>
+      <div class="main_new_list">
+        <ul>
+         {eyou:list pagesize='8'}
+          <li>
+            <div class="fl"> <span><b>{$field.add_time|MyDate='d',###}</b></span><br>
+              <span>{$field.add_time|MyDate='Y-m',###}</span> </div>
+            <a href="{$field.arcurl}">{$field.title}</a>
+            <p>{$field.seo_description|html_msubstr=###,0,50,true}</p>
+          </li>
+         {/eyou:list} 
+        </ul>
+      </div>
+      <div class="page">
+        <div class="pagination">
+        {eyou:pagelist listitem='index,pre,pageno,next,end' listsize='2' /}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+<style type="text/css">
+    .pagination p {
+        line-height: 20px;
+    }
+    .pagination a {
+        line-height: 20px;
+    }
+</style>
+</body>
+</html>

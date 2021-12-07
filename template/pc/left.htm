@@ -1,0 +1,20 @@
+<div class="main_l fl">
+      <div class="main_l_title">
+        <p class="p1">{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+        <p class="p2">{$eyou.field.typeid|gettoptype=###,'englist_name'}</p>
+      </div>
+      <div id="main_l" class="clearfix">
+        <ul class="clearfix">
+          {eyou:channel type='first' id='field' currentstyle='active'}
+          <li class="{$field.currentstyle}"><a href="{$field.typeurl}" >{$field.typename}</a></li>
+          {/eyou:channel}
+        </ul>
+      </div>
+      <div class="main_left_message"> </div>
+      <div class="contact">
+        <p>电话：{eyou:global name='web_attr_1' /}</p>
+        <p>传真：{eyou:global name='web_attr_4' /}</p>
+        <p>邮箱：{eyou:global name='web_attr_5' /}</p>
+        <p>地址：{eyou:global name='web_attr_3' /}</p>
+      </div>
+    </div>

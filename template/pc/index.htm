@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="applicable-device" content="pc">
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<title>{eyou:global name='web_title' /}</title>
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_pc' /}/skin/css/font-awesome.min.css">
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/slider.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/imgauto.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/poposlides.js"></script>
+<script type="text/javascript" src="{eyou:global name='web_templets_pc' /}/skin/js/style.js"></script>
+</head>
+
+<body>
+{eyou:include file="header.htm" /}
+<div class="box_banner">
+  <div id="banner_tabs" class="flexslider">
+    <ul class="slides">
+    {eyou:adv pid='1'}
+      <li><a href="{$field.links}"> <img width="1920" height="500" style="background: url({$field.litpic}) no-repeat center; display:block;margin: 0 auto;" src="{eyou:global name='web_templets_pc' /}/skin/img/alpha.png"></a> </li>
+    {/eyou:adv}   
+    </ul>
+    <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+    {eyou:adv pid='1'}
+      <li><a>{$i}</a></li>
+    {/eyou:adv}
+    </ol>
+  </div>
+</div>
+<div class="i_main main">
+  <div class="search">
+    <div class="searchbar w1200">
+      {eyou:searchform type='default'}
+        <form class="sidebar-search" method="get" action="{$field.action}">
+         {$field.hidden}
+        <input class="text" type="text" name="keywords" value="" placeholder="请输入关键词">
+        <input class="btn" type="submit" name="" value="搜索">
+      </form>
+      {/eyou:searchform}
+      <ul>
+        {eyou:channel type="son" row='8' typeid='2'}
+        <li> <a href="{$field.typeurl}" title="{$field.typename}">{$field.typename}</a> </li>
+        {/eyou:channel}
+      </ul>
+      <img src="{eyou:global name='web_templets_pc' /}/skin/img/arrow.png"> </div>
+  </div>
+  {eyou:channelartlist typeid='1'}
+  <div class="about w1200 clear clearfix">
+    <div class="about_left fl">
+      <h4>{eyou:field name='typename' /}</h4>
+      <h5>{eyou:field name='englist_name' /}</h5>
+      <p class="mt35 mb35"> {eyou:type addtable='single_content'}{$field.content|html_msubstr=###,0,105}...{/eyou:type}</p>
+      <ul>
+        <li> <a href="{eyou:field name='typeurl' /}">详细介绍</a> </li>
+        {eyou:type typeid="5"}
+        <li> <a href="{$field.typeurl}">{$field.typename}</a> </li>
+        {/eyou:type}
+      </ul>
+    </div>
+    <div class="about_right fl">
+      <div class="slides-box">
+        <ul class="slides1">
+        {eyou:adv pid='2'}
+          <li><img src="{$field.litpic}" /></li>
+        {/eyou:adv}
+        </ul>
+      </div>
+    </div>
+    <script>
+                $(".slides1").poposlides();
+            </script> 
+  </div>
+  {/eyou:channelartlist}
+  {eyou:channelartlist typeid='2'}
+  <div class="product clear clearfix">
+    <div class="w1200">
+      <h4>{eyou:field name='typename' /}</h4>
+      <h5>{eyou:field name='englist_name' /}</h5>
+      <h6><i class="fa fa-caret-down" aria-hidden="true"></i></h6>
+      <ul>
+      {eyou:channel type="son" }
+        <li> <a href="{$field.typeurl}">{$field.typename}</a> </li>
+      {/eyou:channel}  
+      </ul>
+    </div>
+    <div class="dowebok w1200">
+      <ul>
+      {eyou:arclist row='30' titlelen='30'}
+        <li> <a href="{$field.arcurl}"><img src="{$field.litpic}" alt="{$field.title}"></a> <a href="{$field.arcurl}" class="pro_title">
+          <p>{$field.title}</p>
+          </a> </li>
+      {/eyou:arclist} 
+      </ul>
+    </div>
+    <a href="{eyou:field name='typeurl' /}" class="more">更多产品</a> </div>
+  {/eyou:channelartlist}
+  <div class="case clearfix clear">
+    <div class="w1200">
+      {eyou:channelartlist typeid='4'}
+      <div class="case_left fl">
+        <div class="case_title">
+          <div class="circle">
+            <p class="p1">{eyou:field name='typename' /}</p>
+            <p class="p2">{eyou:field name='englist_name' /}</p>
+            <p class="p3"><i class="fa fa-caret-down" aria-hidden="true"></i></p>
+          </div>
+          <ul>
+          {eyou:arclist row='4' titlelen='30'}
+            <li> <a href="{$field.arcurl}"><img src="{$field.litpic}" alt="{$field.title}"></a> </li>
+          {/eyou:arclist}   
+            
+          </ul>
+        </div>
+        <script>
+                        $(".case_title ul li a img").imgAuto();
+                    </script> 
+      </div>
+      {/eyou:channelartlist}
+      {eyou:channelartlist typeid='3'}
+      <div class="case_right fr">
+        <h3><a href="{eyou:field name='typeurl' /}" class="fr">more+</a>{eyou:field name='englist_name' /}&nbsp;{eyou:field name='typename' /}</h3>
+        <div class="rec_news">
+          <ul class="clearfix">
+          {eyou:arclist limit='0,1' titlelen='30'}
+            <li>
+              <div> <a href="{$field.arcurl}"><img src="{$field.litpic}" alt="{$field.title}"></a> <a href="{$field.arcurl}">
+                <p class="p1">{$field.title}</p>
+                </a> <span class="p2">{$field.seo_description|html_msubstr=###,0,30,true}</span> </div>
+            </li>
+           {/eyou:arclist} 
+          </ul>
+        </div>
+        <ul class="newslist clearfix">
+        {eyou:arclist limit='1,8' titlelen='30'}
+          <li> <span class="fr">{$field.add_time|MyDate='Y-m-d',###}</span> <a href="{$field.arcurl}">{$field.title}</a> </li>
+        {/eyou:arclist} 
+        </ul>
+      </div>
+      {/eyou:channelartlist}
+    </div>
+  </div>
+  <div class="flink clear clearfix">
+    <div class="w1200">
+      <h3>LINK&nbsp;&nbsp;<span>友情链接</span></h3>
+      <ul>
+      {eyou:flink titlelen='45' type='text'}<li><a href="{$field.url}" {$field.target}>{$field.title} </a></li>{/eyou:flink}
+      </ul>
+    </div>
+  </div>
+  
+</div>
+{eyou:include file="footer.htm" /}
+<style type="text/css">
+    .pagination p {
+        line-height: 20px;
+    }
+    .pagination a {
+        line-height: 20px;
+    }
+</style>
+</body>
+</html>

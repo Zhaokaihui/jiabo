@@ -1,0 +1,32 @@
+<div class="footer">
+<p class="ul"> </p>
+  <p class="p1">{eyou:global name='web_copyright' /}{eyou:global name='web_recordnum' /}</p>
+</div>
+<div class="fixed clear clearfix">
+  <ul>
+    <li> <a href="{eyou:global name='web_cmsurl' /}/"> <i class="fa fa-user" aria-hidden="true"></i>
+      <p>网站首页</p>
+      </a> </li>
+    {eyou:type typeid='2'}
+    <li> <a href="{$field.typeurl}"> <i class="fa fa-product-hunt" aria-hidden="true"></i>
+      <p>{$field.typename}</p>
+      </a> </li>
+    {/eyou:type}
+    {eyou:type typeid='3'}
+    <li> <a href="{$field.typeurl}"> <i class="fa fa-file-text" aria-hidden="true"></i>
+      <p>{$field.typename}</p>
+      </a> </li>
+    {/eyou:type}
+    {eyou:type typeid='5'}
+    <li> <a href="tel:{eyou:global name='web_attr_1' /}"> <i class="fa fa-phone" aria-hidden="true"></i>
+      <p>{$field.typename}</p>
+      </a> </li>
+    {/eyou:type}
+  </ul>
+</div>
+</div>
+
+{eyou:global name='web_thirdcode_wap' /}
+<!-- 应用插件标签 start --> 
+{eyou:weapp type='default' /} 
+<!-- 应用插件标签 end -->

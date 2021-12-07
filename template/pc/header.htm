@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="header_top w1200">
+    <p class="fr">全国服务热线：<span>{eyou:global name='web_attr_1' /}</span></p>
+    <span class="fl">{eyou:global name='web_attr_2' /}</span> </div>
+  <div class="header_bottom clear w1200">
+    <div class="header_logo fl"> <a href="{eyou:global name='web_cmsurl' /}/"> <img src="{eyou:global name='web_logo' /}" alt="{eyou:global name='web_name' /}"> </a></div>
+    <div class="header_nav fr">
+      <ul>
+        <li><a href="{eyou:global name='web_cmsurl' /}/" class="{eyou:eq name='$Think.const.CONTROLLER_NAME' value='Index'}active{/eyou:eq}">网站首页</a></li>
+        {eyou:channel type="top" row="60" id="field" currentstyle="active"}
+        <li><a href="{$field.typeurl}" class="{$field.currentstyle}" target="_self">{$field.typename}</a></li>
+        {/eyou:channel}
+      </ul>
+    </div>
+  </div>
+</div>

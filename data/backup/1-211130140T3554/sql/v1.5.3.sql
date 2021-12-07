@@ -1,0 +1,3 @@
+UPDATE `ey_quickentry` SET `status` = '1' WHERE `type` = '1' AND `controller` = 'Filemanager' AND `action` = 'index';
+DELETE FROM `ey_quickentry` WHERE `type` = '2' AND `controller` = 'Media' AND `action` = 'index' AND `vars` = 'channel=5';
+INSERT INTO `ey_quickentry` (`title`, `laytext`, `type`, `controller`, `action`, `vars`, `groups`, `checked`, `status`, `sort_order`, `add_time`, `update_time`) VALUES ('视频', '视频列表', '2', 'Media', 'index', 'channel=5', '1', '0', '1', '4', '1569310798', '1616579674');
